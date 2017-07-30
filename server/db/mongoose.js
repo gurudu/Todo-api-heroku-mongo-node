@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/DOSAVE');
-
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/todo');
+//mongodb://<dbuser>:<dbpassword>@ds129593.mlab.com:29593/todo
 module.exports = {mongoose};
