@@ -1,15 +1,17 @@
 const MongoClient = require('mongodb').MongoClient;
-
+const express = require('express');
+const app = express();
+var datab;
 // url can be Amazon web services url or Heroku URL in production
-const url = 'mongodb://localhost:27017/TodoApp';
+const url = 'mongodb://Hari615:Hari_416@ds129593.mlab.com:29593/todo';
 MongoClient.connect(url,(err,db) => {
-
+  datab = db;
 	if(err){
 		return console.log('Unable to connect to MongoDB Server');
 	}
 	console.log('connected successfully to MongoDB server');
 
-    db.collection('Todo').insertOne({
+  /*  db.collection('todo11').insertOne({
 
     	text:'Something to do',
         completed:false
@@ -18,7 +20,9 @@ MongoClient.connect(url,(err,db) => {
         	return console.log('Unable to insert into document into Todo collection',err);
         }
       console.log(result.ops[0]._id.getTimestamp());
-    });
-    
-	db.close();
+    });*/
+		app.listen(3000,() => {
+	   console.log(`server listening to the port 3000`);
+	  });
+	//db.close();
 });
