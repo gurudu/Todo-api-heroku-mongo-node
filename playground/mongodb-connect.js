@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const express = require('express');
-const app = express();
+
 var datab;
 // url can be Amazon web services url or Heroku URL in production
 const url = 'mongodb://Hari615:Hari_416@ds129593.mlab.com:29593/todo';
