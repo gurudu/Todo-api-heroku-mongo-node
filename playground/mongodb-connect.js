@@ -11,18 +11,19 @@ MongoClient.connect(url,(err,db) => {
 	}
 	console.log('connected successfully to MongoDB server');
 
-  /*  db.collection('todo11').insertOne({
+    db.collection('todo').insertOne({
 
     	text:'Something to do',
         completed:false
     },(err, result)=>{
         if(err){
-        	return console.log('Unable to insert into document into Todo collection',err);
+           return console.log('Unable to insert into document into Todo collection',err);
         }
       console.log(result.ops[0]._id.getTimestamp());
-    });*/
-		app.listen(3000,() => {
+    });
+
+ app.listen(3000,() => {
 	   console.log(`server listening to the port 3000`);
-	  });
-	//db.close();
+  });
+ db.close();
 });
