@@ -1,7 +1,7 @@
 
 const {mongoose} = require('./db/mongoose');
-var {Todo} = require('./models/todo');
-var {User} = require('./models/user');
+let {Todo} = require('./models/todo');
+let {User} = require('./models/user');
 
 const {ObjectID} = require('mongodb');
 const express = require('express');
@@ -55,36 +55,3 @@ app.get('/todos/:id',(req,res) => {
 app.listen(port,() => {
  console.log(`server listening to the port ${port}`);
 });
-
-
-
-/*var newTodo = new Todo({
-
-	text:'have you had your dinner?',
-	completed: true
-});
-
-newTodo.save().then((doc) => {
-
-console.log('saved todo',doc);
-
-},(e)=>{
-
-  console.log('Unable to save todo');
-});
-
-
-
-var user = new User({
-   email:'  hari@co.in  '
-});
-
-
-user.save().then((doc)=>{
- console.log('saved user',doc);
-
-},(e)=>{
-   console.log('Unable to save user');
-})
-
-*/
