@@ -11,11 +11,11 @@ MongoClient.connect(url,(err,db) => {
 	}
 	console.log('connected successfully to MongoDB server');
 
-    db.collection('todo').insertOne({
+    db.collection('todo').insertOne( {
 
     	text:'Something to do',
         completed:false
-    },(err, result)=>{
+    },(err, result) => {
         if(err){
            return console.log('Unable to insert into document into Todo collection',err);
         }
